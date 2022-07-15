@@ -54,10 +54,10 @@ RSpec.describe 'Items API' do
       expect(item[:data][:attributes][:unit_price]).to be_a(Float)
     end
 
-    it 'cannot get one item' do
+    it 'sad path, cannot get one item' do
       id = create(:item).id
 
-      get "/api/v1/items/NOMATCHFOUND"
+      get "/api/v1/items/99955677"
 
       error = JSON.parse(response.body, symbolize_names: true)
       expect(response).to_not be_successful

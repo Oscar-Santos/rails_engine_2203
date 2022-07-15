@@ -49,4 +49,5 @@ RSpec.describe 'Merchant Items API' do
 
     expect(error).to have_key(:message)
   end
+
 end
